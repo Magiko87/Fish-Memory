@@ -1,0 +1,90 @@
+html{
+    text-align: center;
+}
+body{
+    background-color: rgb(0, 255, 234);
+    margin: 0;
+    overflow: hidden;
+    
+}
+img{
+    width:80px;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 500px;
+    
+
+}
+.box-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    width: 30px;
+    font-size: xx-large;
+    height: 30px;
+  
+}
+.new-game{
+    background-color: rgb(21, 135, 234);
+}
+button{
+    color: white;
+    background-color: rgb(21, 135, 234);
+    border: 0;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+    
+    
+
+
+
+
+
+header{
+    background-color: rgba(20, 65, 200, 0.509);
+    margin-top: 0;
+    border: none;
+    height: 190px;
+}
+    
+@font-face{
+    src: url(/Font/CastoroTitling-Regular.ttf/);
+    font-family: 'CastoroTitling-Regular.ttf',sans-serif;
+}
+h1 , .title{
+    margin-top: 0;
+    color: white;
+    padding-top: 20px;
+    font-family: 'CastoroTitling-Regular.ttf',sans-serif;
+}
+.hidden{
+   display: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    padding:10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    color: rgb(97, 96, 96);
+}

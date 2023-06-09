@@ -4,7 +4,25 @@ const newGameButton = document.querySelector('.new-game');
 
 // Variabile per tenere traccia dei paragrafi aperti
 let openedParagraphs = [];
-let gameLocked = false;
+
+/// Funzione per controllare se ci sono due paragrafi uguali aperti
+function checkWin() {
+  if (openedParagraphs.length === 2) {
+    const [firstParagraph, secondParagraph] = openedParagraphs;
+    if (firstParagraph.textContent === secondParagraph.textContent) {
+      const winMessage = document.querySelector('.win-message');
+      winMessage.classList.remove('hidden');
+    } else {
+      setTimeout(() => {
+        openedParagraphs.forEach(paragraph => {
+          paragraph.classList.add('hidden');
+        });
+        openedParagraphs = [];
+      }, 400);
+    }
+  }
+}
+
 
 // Funzione per mescolare casualmente un array
 function shuffleArray(array) {
@@ -25,37 +43,12 @@ function shuffleParagrafi() {
   });
 }
 
-// Funzione per controllare se ci sono due paragrafi uguali aperti
-function checkWin() {
-  if (openedParagraphs.length === 2) {
-    const [firstParagraph, secondParagraph] = openedParagraphs;
-    if (firstParagraph.textContent === secondParagraph.textContent) {
-      // Hai vinto!
-      const winMessage = document.createElement('p');
-      winMessage.textContent = 'Hai vinto!';
-      document.body.appendChild(winMessage);
-      gameLocked = true;
-    } else {
-      // Blocca il gioco per un breve periodo e chiudi i paragrafi
-      gameLocked = true;
-      setTimeout(() => {
-        openedParagraphs.forEach(paragraph => {
-          paragraph.classList.add('hidden');
-        });
-        openedParagraphs = [];
-        gameLocked = false;
-      }, 1000);
-    }
-  }
-}
-
 // Aggiungi un gestore di eventi di clic a ciascun elemento "box-item"
 boxItems.forEach(item => {
   item.addEventListener('click', () => {
-    if (gameLocked) return;
     const paragraph = item.querySelector('p');
-    if (paragraph.classList.contains('hidden')) return;
-    paragraph.classList.toggle('hidden');
+    if (openedParagraphs.includes(paragraph)) return; // Evita di aprire lo stesso paragrafo due volte
+    paragraph.classList.remove('hidden');
     openedParagraphs.push(paragraph);
     checkWin();
   });
@@ -68,6 +61,12 @@ newGameButton.addEventListener('click', () => {
     paragraph.classList.add('hidden');
   });
   openedParagraphs = [];
-  gameLocked = false;
+  const winMessage = document.querySelector('.header p');
+  if (winMessage) {
+    winMessage.remove();
+  }
   shuffleParagrafi();
+     // Nascondi il messaggio di vittoria
+  const winMessageHidden = document.querySelector('.win-message');
+  winMessageHidden.classList.add('hidden');
 });

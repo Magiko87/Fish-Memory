@@ -1,90 +1,93 @@
-html{
-    text-align: center;
+html {
+  text-align: center;
 }
-body{
-    background-color: rgb(0, 255, 234);
-    margin: 0;
-    overflow: hidden;
+body {
+   
+    background: rgb(118,191,205);
+    background: linear-gradient(90deg, rgba(118,191,205,1) 33%, rgba(22,120,139,1) 57%, rgba(44,129,147,1) 100%);
+  margin: 0;
+  overflow: hidden;
+}
+img {
+  width: 80px;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 500px;
+}
+.box-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  width: 30px;
+  font-size: xx-large;
+  height: 30px;
+}
+.new-game {
+
+}
+button {
+  color: white;
+  background: linear-gradient(90deg, rgba(118,191,205,1) 33%, rgba(22,120,139,1) 57%, rgba(44,129,147,1) 100%);
+  border-radius: 20px;
+  border: 0;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+   }
+
+header {
     
-}
-img{
-    width:80px;
-}
-
-.conteiner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:row;
-    flex-wrap: wrap;
-    width: 500px;
-    
-
-}
-.box-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    width: 30px;
-    font-size: xx-large;
-    height: 30px;
-  
-}
-.new-game{
-    background-color: rgb(21, 135, 234);
-}
-button{
-    color: white;
-    background-color: rgb(21, 135, 234);
-    border: 0;
-    font-size: large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(9,57,66);
+    background: linear-gradient(90deg, rgba(9,57,66,1) 57%, rgba(0,212,255,1) 100%);
+  margin-top: 0;
+  border: none;
+  height: 190px;
 }
 
-
-    
-    
-
-
-
-
-
-header{
-    background-color: rgba(20, 65, 200, 0.509);
-    margin-top: 0;
-    border: none;
-    height: 190px;
+@font-face {
+  src: url(/Font/CastoroTitling-Regular.ttf/);
+  font-family: "CastoroTitling-Regular.ttf", sans-serif;
 }
-    
-@font-face{
-    src: url(/Font/CastoroTitling-Regular.ttf/);
-    font-family: 'CastoroTitling-Regular.ttf',sans-serif;
+h1,
+.title {
+  margin-top: 0;
+  color: white;
+  padding-top: 20px;
+  font-family: "CastoroTitling-Regular.ttf", sans-serif;
 }
-h1 , .title{
-    margin-top: 0;
-    color: white;
-    padding-top: 20px;
-    font-family: 'CastoroTitling-Regular.ttf',sans-serif;
+.hidden {
+  display: none;
 }
-.hidden{
-   display: none;
+.win-message {
+    color:   rgb(5, 38, 44);
+   
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
-
-footer{
-    display: flex;
-    justify-content: center;
-    font-size: large;
-    padding:10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 900;
-    color: rgb(97, 96, 96);
+footer {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  color: rgb(251, 251, 251);
 }

@@ -91,8 +91,8 @@ h1,
   display: none;
 }
 .win-message {
-  font-family: BungeeSpice-Regular;
-
+  font-family: BungeeSpice-Regular,Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
   font-size: 60px;
   position: absolute;
   top: 50%;

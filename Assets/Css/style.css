@@ -17,7 +17,7 @@ img {
 }
 @font-face {
   font-family: BungeeSpice-Regular;
-  src: url(Assets/Font/BungeeSpice-Regular.ttf);
+  src: url(/Assets/Font/BungeeSpice-Regular.ttf);
 }
 .conteiner {
   display: flex;
@@ -43,7 +43,7 @@ img {
     rgba(15, 147, 172, 1) 57%,
     rgba(6, 96, 115, 1) 100%
   );
-  cursor:url(Assets/Img/trident-2.png),auto ;
+  cursor:url(/Assets/Img/trident-2.png),auto ;
   margin: 20px;
   padding: 20px;
   width: 30px;

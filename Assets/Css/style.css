@@ -1,17 +1,24 @@
 html {
   text-align: center;
+  
 }
 body {
-   
-    background: rgb(118,191,205);
-    background: linear-gradient(90deg, rgba(118,191,205,1) 33%, rgba(22,120,139,1) 57%, rgba(44,129,147,1) 100%);
-  margin: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(12, 35, 39) 33%,
+    rgb(27, 88, 100) 57%,
+    rgb(33, 126, 144) 100%
+  );
+
   overflow: hidden;
 }
 img {
   width: 80px;
 }
-
+@font-face {
+  font-family: BungeeSpice-Regular;
+  src: url(/Assets/Font/BungeeSpice-Regular.ttf);
+}
 .conteiner {
   display: flex;
   justify-content: center;
@@ -29,52 +36,63 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background: rgb(19, 166, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 166, 195, 1) 32%,
+    rgba(15, 147, 172, 1) 57%,
+    rgba(6, 96, 115, 1) 100%
+  );
+  cursor:url(/Assets/Img/trident-2.png),auto ;
   margin: 20px;
   padding: 20px;
   width: 30px;
   font-size: xx-large;
   height: 30px;
 }
-.new-game {
 
-}
 button {
   color: white;
-  background: linear-gradient(90deg, rgba(118,191,205,1) 33%, rgba(22,120,139,1) 57%, rgba(44,129,147,1) 100%);
+  background: rgb(19, 166, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 166, 195, 1) 32%,
+    rgba(15, 147, 172, 1) 57%,
+    rgba(6, 96, 115, 1) 100%
+  );
   border-radius: 20px;
   border: 0;
   font-size: large;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-   }
+  font-family: "Nova Cut", cursive;
+}
 
 header {
-    
-    background: rgb(9,57,66);
-    background: linear-gradient(90deg, rgba(9,57,66,1) 57%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(12, 35, 39) 33%,
+    rgb(27, 88, 100) 57%,
+    rgb(33, 126, 144) 100%
+  );
+
   margin-top: 0;
   border: none;
   height: 190px;
 }
 
-@font-face {
-  src: url(/Font/CastoroTitling-Regular.ttf/);
-  font-family: "CastoroTitling-Regular.ttf", sans-serif;
-}
 h1,
 .title {
+  font-family: "Nova Cut", cursive;
   margin-top: 0;
   color: white;
   padding-top: 20px;
-  font-family: "CastoroTitling-Regular.ttf", sans-serif;
+  font-family: ;
 }
 .hidden {
   display: none;
 }
 .win-message {
-    color:   rgb(5, 38, 44);
-   
+  font-family: BungeeSpice-Regular;
+
   font-size: 60px;
   position: absolute;
   top: 50%;
@@ -86,8 +104,8 @@ footer {
   display: flex;
   justify-content: center;
   font-size: large;
-  padding: 10px;
+  padding: 0px;
   font-family: "Times New Roman", Times, serif;
   font-weight: 900;
-  color: rgb(251, 251, 251);
+  color: white;
 }

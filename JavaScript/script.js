@@ -2,6 +2,8 @@
 const boxItems = document.querySelectorAll('.box-item');
 const newGameButton = document.querySelector('.new-game');
 
+let gameOver = false;
+
 // Variabile per tenere traccia dei paragrafi aperti
 let openedParagraphs = [];
 
@@ -12,12 +14,16 @@ function checkWin() {
     if (firstParagraph.textContent === secondParagraph.textContent) {
       const winMessage = document.querySelector('.win-message');
       winMessage.classList.remove('hidden');
+         // Blocca il gioco
+         gameOver = true;
     } else {
       setTimeout(() => {
         openedParagraphs.forEach(paragraph => {
           paragraph.classList.add('hidden');
         });
         openedParagraphs = [];
+         // Sblocca il gioco dopo aver chiuso i paragrafi non corrispondenti
+         gameLocked = false;
       }, 400);
     }
   }
@@ -45,14 +51,38 @@ function shuffleParagrafi() {
 
 // Aggiungi un gestore di eventi di clic a ciascun elemento "box-item"
 boxItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const paragraph = item.querySelector('p');
-    if (openedParagraphs.includes(paragraph)) return; // Evita di aprire lo stesso paragrafo due volte
-    paragraph.classList.remove('hidden');
-    openedParagraphs.push(paragraph);
-    checkWin();
+    item.addEventListener('click', () => {
+      if (gameOver) return; // Se il gioco è bloccato, esci dalla funzione
+      const paragraph = item.querySelector('p');
+      if (openedParagraphs.includes(paragraph)) return; // Evita di aprire lo stesso paragrafo due volte
+      paragraph.classList.remove('hidden');
+      openedParagraphs.push(paragraph);
+      checkWin();
+    });
   });
-});
+
+  newGameButton.addEventListener('click', () => {
+    boxItems.forEach(item => {
+      const paragraph = item.querySelector('p');
+      paragraph.classList.add('hidden');
+    });
+    openedParagraphs = [];
+    shuffleParagrafi();
+    
+    // Nascondi il messaggio di vittoria
+    const winMessage = document.getElementById('win-message');
+    winMessage.classList.add('hidden');
+    
+    // Reimposta il gioco come non bloccato
+    gameOver = false;
+
+  });
+
+  
+  
+  
+  
+  
 
 // Aggiungi un gestore di eventi di clic al pulsante "new-game"
 newGameButton.addEventListener('click', () => {
@@ -69,4 +99,6 @@ newGameButton.addEventListener('click', () => {
      // Nascondi il messaggio di vittoria
   const winMessageHidden = document.querySelector('.win-message');
   winMessageHidden.classList.add('hidden');
+   // Sblocca il gioco
+   gameLocked = false;
 });

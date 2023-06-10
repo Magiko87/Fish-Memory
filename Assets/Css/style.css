@@ -14,6 +14,8 @@ body {
 }
 img {
   width: 80px;
+  
+
 }
 @font-face {
   font-family: BungeeSpice-Regular;
@@ -51,6 +53,7 @@ img {
   height: 30px;
 }
 
+
 button {
   color: white;
   background: rgb(19, 166, 195);
@@ -65,7 +68,14 @@ button {
   font-size: large;
   font-family: "Nova Cut", cursive;
 }
-
+#timer{
+  margin-right: 225px;
+  font-size: 20px;
+  color:white;
+  font-family: "Nova Cut", cursive;
+ 
+  
+}
 header {
   background: linear-gradient(
     90deg,
@@ -90,7 +100,21 @@ h1,
 .hidden {
   display: none;
 }
-.win-message {
+.score{
+  color: white;
+  margin-left: 220px;
+  font-size: x-large;
+}
+.score {
+  position: absolute;
+  right: 65px;
+  top: 193px;
+  font-size: 24px;
+  color: white;
+}
+
+
+.win-message,.lose-message {
   font-family: BungeeSpice-Regular,Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-size: 60px;

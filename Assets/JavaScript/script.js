@@ -31,16 +31,27 @@ function checkWin() {
   if (matchedParagraphs.length === boxItems.length) {
     // Hai vinto!
     const winMessage = document.getElementById('win-message');
+    winMessage.textContent = `Win! Score: ${score}`;
     winMessage.classList.remove('hidden');
-    boxItems.forEach(item => {
-      item.removeEventListener('click', handleItemClick);
-    });
+    blockGame(); // Blocca il gioco
+    
+     // Azzeramento del punteggio
+  score = 0;
+  updateScore();
+
+  } else if (countdown <= 0) {
+    // Il tempo è scaduto, hai perso
+    const loseMessage = document.getElementById('lose-message');
+    loseMessage.textContent = `Lose! Score: ${score}`;
+    loseMessage.classList.remove('hidden');
+    blockGame(); // Blocca il gioco
   }
 }
 
+
 function updateScore() {
   const scoreElement = document.getElementById('score');
-  scoreElement.textContent = `Punteggio: ${score}`;
+  scoreElement.textContent = `${score}`;
 }
 
 function shuffleArray(array) {
@@ -69,36 +80,11 @@ function startTimer() {
       blockGame();
       showMessage('Lose!!');
       timerElement.textContent = '00:00'; // Imposta il timer a 00:00
+      score = 0; // Azzera il punteggio
+      updateScore();
     }
   }, 1000);
 }
-function checkWin() {
-  if (openedParagraphs.length === 2) {
-    const [firstParagraph, secondParagraph] = openedParagraphs;
-    if (firstParagraph.textContent === secondParagraph.textContent) {
-      matchedParagraphs.push(firstParagraph, secondParagraph);
-      openedParagraphs = [];
-      score += 10; // Incrementa il punteggio di 10 punti
-    } else {
-      setTimeout(() => {
-        openedParagraphs.forEach(paragraph => {
-          paragraph.classList.add('hidden');
-        });
-        openedParagraphs = [];
-      }, 400);
-    }
-  }
-
-  if (matchedParagraphs.length === boxItems.length) {
-    // Hai vinto!
-    const winMessage = document.getElementById('win-message');
-    winMessage.classList.remove('hidden');
-    boxItems.forEach(item => {
-      item.removeEventListener('click', handleItemClick);
-    });
-  }
-}
-
 
 function stopTimer() {
   clearInterval(timerInterval);
@@ -111,8 +97,7 @@ newGameButton.addEventListener('click', () => {
   const winMessage = document.getElementById('win-message');
   winMessage.classList.add('hidden');
   const loseMessage = document.getElementById('lose-message');
-  loseMessage.classList.add('hidden'); 
-
+  loseMessage.classList.add('hidden');
 
   boxItems.forEach(item => {
     const paragraph = item.querySelector('p');
@@ -137,18 +122,12 @@ function blockGame() {
 
   stopTimer();
 }
-  // Reimposta il timer
-  countdown = parseInt(document.querySelector("#timer").getAttribute('data-time'));
-  stopTimer();
-  startTimer();
-
 
 function showMessage(message) {
   const loseMessage = document.getElementById('lose-message');
   loseMessage.textContent = `${message} Score: ${score}`;
   loseMessage.classList.remove('hidden');
 }
-
 
 function shuffleParagrafi() {
   const shuffledParagrafi = shuffleArray(Array.from(boxItems));

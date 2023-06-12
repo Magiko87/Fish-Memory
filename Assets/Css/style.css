@@ -17,6 +17,10 @@ img {
   
 
 }
+.matched {
+  visibility: hidden;
+}
+
 @font-face {
   font-family: BungeeSpice-Regular;
   src: url(../Font/BungeeSpice-Regular.ttf);
@@ -100,15 +104,10 @@ h1,
 .hidden {
   display: none;
 }
-.score{
-  color: white;
-  margin-left: 220px;
-  font-size: x-large;
-}
-.score {
+#score {
   position: absolute;
-  right: 65px;
   top: 193px;
+  right: 65px;
   font-size: 24px;
   color: white;
 }

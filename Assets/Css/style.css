@@ -1,6 +1,5 @@
 html {
   text-align: center;
-  
 }
 body {
   background: linear-gradient(
@@ -14,8 +13,6 @@ body {
 }
 img {
   width: 80px;
-  
-
 }
 .matched {
   visibility: hidden;
@@ -49,14 +46,13 @@ img {
     rgba(15, 147, 172, 1) 57%,
     rgba(6, 96, 115, 1) 100%
   );
-  cursor:url(../Img/trident-2.png),auto ;
+  cursor: url(../Img/trident-2.png), auto;
   margin: 20px;
   padding: 20px;
   width: 30px;
   font-size: xx-large;
   height: 30px;
 }
-
 
 button {
   color: white;
@@ -72,13 +68,11 @@ button {
   font-size: large;
   font-family: "Nova Cut", cursive;
 }
-#timer{
+#timer {
   margin-right: 225px;
   font-size: 20px;
-  color:white;
+  color: white;
   font-family: "Nova Cut", cursive;
- 
-  
 }
 header {
   background: linear-gradient(
@@ -105,16 +99,21 @@ h1,
   display: none;
 }
 #score {
+  text-align: center;
   position: absolute;
   top: 193px;
   right: 65px;
   font-size: 24px;
   color: white;
+  font-size: 24px;
+  font-family: "Nova Cut", cursive;
+    
+    margin-left: 10px;
 }
 
-
-.win-message,.lose-message {
-  font-family: BungeeSpice-Regular,Verdana, Geneva, Tahoma, sans-serif;
+.win-message,
+.lose-message {
+  font-family: BungeeSpice-Regular, Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-size: 60px;
   position: absolute;
@@ -123,6 +122,80 @@ h1,
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+@media only screen and (min-width: 768px) {
+  .header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(
+      90deg,
+      rgb(12, 35, 39) 33%,
+      rgb(27, 88, 100) 57%,
+      rgb(33, 126, 144) 100%
+    );
+    margin-top: 0;
+    border: none;
+    height: 190px;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+  .new-game button {
+    font-size: large;
+    font-family: "Nova Cut", cursive;
+  }
+  
+  .score-timer {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+
+  #timer {
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  @media only screen and (min-width: 767px) {
+    .container {
+      position: static;
+      transform: none;
+      justify-content: space-between;
+    }
+    body {
+      zoom: 2.0;
+    }
+    #score {
+      position: absolute;
+      top: 180px;
+      right: 480px;
+      font-size: 24px;
+      color: white;
+    }
+  
+    #timer {
+      position: absolute;
+      top: 185px;
+      right: 775px;
+      font-size: 20px;
+      color: white;
+    }
+  }
+  
+  button.new-game {
+    font-size: large;
+    font-family: "Nova Cut", cursive;
+  }
+
 footer {
   display: flex;
   justify-content: center;

@@ -151,7 +151,7 @@ h1,
     color: white;
     margin-right: 10px;
   }
-  footer {
+  .Footer {
     color: white;
     display: flex;
     justify-content: center;

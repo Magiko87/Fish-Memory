@@ -180,9 +180,7 @@ h1,
       transform: none;
       justify-content: space-between;
     }
-    body {
-      zoom: 1.2;
-    }
+    
     #score {
       position: absolute;
       top: 180px;
